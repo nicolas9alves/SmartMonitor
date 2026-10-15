@@ -1,0 +1,42 @@
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<h1>SmartMonitor</h1>
+
+<p>
+    Olá, {{ session['usuario'] }}
+</p>
+
+<h2>Monitoramento</h2>
+
+<p>
+    CPU: {{ cpu }}%
+</p>
+
+<p>
+    RAM: {{ ram }}%
+</p>
+
+<p>
+    Disco: {{ disco }}%
+</p>
+
+<br>
+
+<a href="/setores">
+    Setores
+</a>
+
+<br><br>
+
+<a href="/computadores">
+    Computadores
+</a>
+
+<br><br>
+
+<a href="/logout">
+    Sair
+</a>

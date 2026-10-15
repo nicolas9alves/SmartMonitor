@@ -1,0 +1,52 @@
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<h1>Setores</h1>
+
+<form method="post">
+
+    <input
+        name="nome"
+        placeholder="Nome"
+        required
+    >
+
+    <input
+        name="descricao"
+        placeholder="Descrição"
+    >
+
+    <button>
+        Cadastrar
+    </button>
+
+</form>
+
+<hr>
+
+{% for setor in setores %}
+
+<p>
+
+    {{ setor[1] }}
+
+    -
+
+    {{ setor[2] }}
+
+    <a href="/deletar_setor/{{ setor[0] }}">
+        Excluir
+    </a>
+
+</p>
+
+{% endfor %}
+
+<br>
+
+<a href="/">
+    Voltar
+</a>

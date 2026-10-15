@@ -1,0 +1,70 @@
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<h1>Computadores</h1>
+
+<form method="post">
+
+    <input
+        name="nome"
+        placeholder="Nome"
+        required
+    >
+
+    <input
+        name="identificador"
+        placeholder="Identificador"
+        required
+    >
+
+    <select name="id_setor">
+
+        {% for setor in setores %}
+
+        <option value="{{ setor[0] }}">
+
+            {{ setor[1] }}
+
+        </option>
+
+        {% endfor %}
+
+    </select>
+
+    <button>
+        Cadastrar
+    </button>
+
+</form>
+
+<hr>
+
+{% for pc in computadores %}
+
+<p>
+
+    {{ pc[1] }}
+
+    -
+
+    {{ pc[2] }}
+
+    -
+
+    Setor: {{ pc[3] }}
+
+    <a href="/deletar_computador/{{ pc[0] }}">
+        Excluir
+    </a>
+
+</p>
+
+{% endfor %}
+
+<br>
+
+<a href="/">
+    Voltar
+</a>
